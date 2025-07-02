@@ -1,0 +1,316 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Baumans&display=swap');
+
+/* 重置和基础样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Baumans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0; /* 移除padding以实现全屏 */
+    margin: 0;
+}
+
+/* 主容器 */
+.container {
+    display: flex;
+    background: white;
+    border-radius: 0; /* 全屏时移除圆角 */
+    box-shadow: none; /* 全屏时移除阴影 */
+    overflow: hidden;
+    width: 100vw; /* 使用视口宽度 */
+    height: 100vh; /* 使用视口高度 */
+    max-width: 900px;
+    min-height: 500px;
+}
+
+/* 左侧区域 */
+.left-section {
+    flex: 1;
+    padding: 40px;
+    background: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%; /* 确保占满容器高度 */
+}
+
+/* 右侧区域 */
+.right-section {
+    flex: 1;
+    padding: 40px;
+    background: white;
+    border-left: 1px solid #e4e6ea;
+    min-height: 100%; /* 确保占满容器高度 */
+    display: flex;
+    flex-direction: column;
+}
+
+.character-display {
+    min-height: 300px;
+    flex: 1; /* 让显示区域占满剩余空间 */
+    background: #f7f8fa;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #e4e6ea;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow-y: auto; /* 内容过多时可滚动 */
+}
+
+/* 响应式设计优化 */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 100vw;
+        height: 100vh;
+    }
+    
+    .left-section,
+    .right-section {
+        padding: 20px;
+        flex: 1;
+    }
+    
+    .right-section {
+        border-left: none;
+        border-top: 1px solid #e4e6ea;
+    }
+}
+
+/* 如果你希望保留一些边距而不是完全全屏，可以使用这个替代方案 */
+@media (min-width: 769px) {
+    body {
+        padding: 20px;
+    }
+    
+    .container {
+        width: calc(100vw - 40px);
+        height: calc(100vh - 40px);
+        border-radius: 16px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    }
+}
+
+.input-container {
+    width: 100%;
+    max-width: 350px;
+}
+
+/* 输入框样式 */
+#textInput {
+    width: 100%;
+    padding: 16px 20px;
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    font-size: 300px;
+    font-weight: 400;
+    background: white;
+    transition: all 0.3s ease;
+    outline: none;
+    color: #1c1e21;
+}
+
+#textInput:focus {
+    border-color: #1877f2;
+    box-shadow: 0 0 0 4px rgba(24, 119, 242, 0.1);
+}
+
+#textInput::placeholder {
+    color: #8a8d91;
+}
+
+/* 进度条容器 */
+.progress-container {
+    margin-top: 20px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #e4e6ea;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #1877f2, #42a5f5);
+    border-radius: 4px;
+    width: 0%;
+    transition: width 0.3s ease;
+    position: relative;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+.progress-text {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 14px;
+    color: #65676b;
+    font-weight: 500;
+}
+
+/* 右侧区域 */
+.right-section {
+    flex: 1;
+    padding: 40px;
+    background: white;
+    border-left: 1px solid #e4e6ea;
+}
+
+.display-container h3 {
+    color: #1c1e21;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    text-align: center;
+}
+
+.character-display {
+    min-height: 300px;
+    background: #f7f8fa;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #e4e6ea;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* 字符项样式 */
+.character-item {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 16px 20px;
+    margin: 12px 0;
+    border-radius: 16px;
+    font-size: 14px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+    transform: translateY(0);
+    transition: all 0.3s ease;
+    animation: slideIn 0.5s ease-out;
+    word-break: break-all;
+}
+
+.character-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.character-item.loading {
+    background: linear-gradient(135deg, #ffeaa7 0%, #fab1a0 100%);
+    color: #2d3436;
+}
+
+.loading-spinner {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-style: italic;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+.translation-output {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    border-radius: 8px;
+    border-left: 4px solid rgba(255, 255, 255, 0.3);
+    font-style: italic;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 空状态 */
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #8a8d91;
+    font-size: 16px;
+}
+
+.empty-state::before {
+    content: '📝';
+    font-size: 48px;
+    margin-bottom: 16px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        max-width: 100%;
+    }
+    
+    .left-section,
+    .right-section {
+        padding: 30px 20px;
+    }
+    
+    .right-section {
+        border-left: none;
+        border-top: 1px solid #e4e6ea;
+    }
+}
+
+/* 进度条满时的特效 */
+.progress-fill.complete {
+    background: linear-gradient(90deg, #42b883, #4fc08d);
+    animation: pulse 0.6s ease;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scaleY(1); }
+    50% { transform: scaleY(1.2); }
+}
+
+/* 强调文本样式 */
+strong {
+    font-size: 1.5em;
+    color: #000000;
+    font-weight: bold;
+}

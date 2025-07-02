@@ -1,0 +1,89 @@
+# -----------------------------------------------------------
+# 1. 操作系统生成的临时文件 (Operating System generated files)
+# -----------------------------------------------------------
+.DS_Store            # macOS Finder 的元数据文件
+.localized           # macOS 本地化文件
+Thumbs.db            # Windows 缩略图缓存
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/        # Windows 回收站
+*.stackdump          # Windows 崩溃转储文件
+
+# -----------------------------------------------------------
+# 2. IDE 和编辑器文件 (IDE and Editor files)
+# -----------------------------------------------------------
+.idea/               # IntelliJ IDEA/PyCharm 等 IDE 的项目配置目录
+.vscode/             # VS Code 的工作区配置目录
+*.iml                # IntelliJ IDEA 模块文件
+*.ipr                # IntelliJ IDEA 项目文件
+*.iws                # IntelliJ IDEA 工作区文件
+.project             # Eclipse/PyDev 项目文件
+.classpath           # Eclipse/PyDev 类路径文件
+.settings/           # Eclipse/PyDev 项目设置目录
+*.sublime-project    # Sublime Text 项目文件
+*.sublime-workspace  # Sublime Text 工作区文件
+*.swp                # Vim 交换文件
+*~                   # Emacs 临时文件
+
+# -----------------------------------------------------------
+# 3. Python 字节码和编译文件 (Python bytecode and compiled files)
+# -----------------------------------------------------------
+__pycache__/         # Python 字节码缓存目录
+*.pyc                # Python 编译文件
+*.pyd                # Python 动态库 (Windows)
+*.so                 # 共享库 (Linux/macOS)
+
+# -----------------------------------------------------------
+# 4. 虚拟环境 (Virtual environments)
+# -----------------------------------------------------------
+.Python              # Python 虚拟环境目录 (旧版本或特定工具)
+venv/                # 常见的 Python 虚拟环境目录
+env/                 # 常见的 Python 虚拟环境目录
+.venv/               # 另一种常见的虚拟环境目录 (Python 3.3+ venv 默认)
+pip-log.txt          # pip 日志
+pip-delete-this-directory.txt # pip 临时目录
+
+# -----------------------------------------------------------
+# 5. 测试和覆盖率报告 (Test and coverage reports)
+# -----------------------------------------------------------
+.pytest_cache/       # pytest 缓存目录
+.coverage            # coverage.py 报告文件
+htmlcov/             # coverage.py HTML 报告目录
+
+# -----------------------------------------------------------
+# 6. 日志和临时文件 (Logs and Temporary files)
+# -----------------------------------------------------------
+*.log                # 所有 .log 文件
+*.tmp                # 所有 .tmp 文件
+temp/                # 临时目录
+tmp/                 # 临时目录
+
+# -----------------------------------------------------------
+# 7. 数据库文件 (Database files)
+# -----------------------------------------------------------
+*.sqlite3            # SQLite 数据库文件 (如果不是项目的一部分，例如开发数据库)
+*.db                 # 通用数据库文件 (如果不是项目的一部分)
+
+# -----------------------------------------------------------
+# 8. 敏感信息和用户特定配置 (Sensitive Information & User-specific Config)
+# -----------------------------------------------------------
+.env                 # 环境变量文件 (包含敏感信息，绝不能上传)
+.env.*.local         # 更多的本地环境变量文件
+instance/            # Flask 等框架的实例目录，可能包含敏感配置
+local_settings.py    # Django 等框架的本地设置文件
+
+# -----------------------------------------------------------
+# 9. 分发和打包文件 (Distribution and packaging files)
+# -----------------------------------------------------------
+dist/                # 打包分发目录
+build/               # 构建目录
+*.egg                # setuptools 生成的 egg 包
+*.egg-info/          # setuptools 信息目录
+.tox/                # tox 自动化测试工具的目录
+.mypy_cache/         # MyPy 类型检查缓存
+.ipynb_checkpoints/  # Jupyter Notebook 检查点
+
+# -----------------------------------------------------------
+# 10. Jupyter Notebook 相关的 (Jupyter Notebook related)
+# -----------------------------------------------------------
+.ipynb_checkpoints/  # Jupyter Notebook 自动保存的检查点文件
