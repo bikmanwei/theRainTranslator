@@ -1,109 +1,113 @@
-# 雨滴翻译器 (Rain Translator)
 
-一个将用户输入的字符转换为雨相关诗歌的创意Web应用。使用ChatGPT API将随机字符串转换为富有想象力的雨主题诗歌。
 
-## 项目介绍
 
-雨滴翻译器是一个创意文本处理工具，它能够：
-- 接收用户输入的最多10个字符
-- 通过ChatGPT API将字符转换为雨主题的诗歌
-- 提供实时进度条显示
-- 支持自动提交（10字符时）或手动提交（回车键）
-- 显示转换历史记录
+          
+# Rain Translator
 
-## 快速启动指南
+A creative web application that converts user input characters into rain-themed poetry using the ChatGPT API. Transform random character strings into imaginative rain-themed poems.
 
-### 1. 环境准备
+## Project Overview
 
-确保你的系统已安装：
+Rain Translator is a creative text processing tool that can:
+- Accept user input of up to 15 characters
+- Convert characters into rain-themed poetry through ChatGPT API
+- Provide real-time progress bar display
+- Support auto-submission (at 15 characters) or manual submission (Enter key)
+- Display conversion history
+
+## Quick Start Guide
+
+### 1. Environment Setup
+
+Ensure your system has:
 - Python 3.7+
-- pip（Python包管理器）
+- pip (Python package manager)
 
-### 2. 获取OpenAI API密钥
+### 2. Get OpenAI API Key
 
-1. 访问 [OpenAI官网](https://platform.openai.com/)
-2. 注册并登录账户
-3. 获取API密钥
+1. Visit [OpenAI Official Website](https://platform.openai.com/)
+2. Register and log into your account
+3. Obtain your API key
 
-### 3. 项目配置
+### 3. Project Configuration
 
-1. **克隆或下载项目到本地**
+1. **Clone or download the project locally**
 
-2. **安装Python依赖**
+2. **Install Python dependencies**
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **配置环境变量**
+3. **Configure environment variables**
    
-   在项目根目录创建 `.env` 文件，添加以下内容：
+   Create a `.env` file in the project root directory and add the following:
    ```
-   OPENAI_API_KEY=你的OpenAI_API密钥
-   PROMPT_TEXT=你的自定义提示词（可选，有默认值）
+   OPENAI_API_KEY=your_OpenAI_API_key
+   PROMPT_TEXT=your_custom_prompt_text (optional, has default value)
    ```
 
-### 4. 启动服务
+### 4. Start the Service
 
-在项目根目录运行：
+Run in the project root directory:
 ```bash
-python translate_ChatGPT.py
+python theRainTranslator.py
 ```
 
-看到以下信息表示启动成功：
+Seeing the following information indicates successful startup:
 ```
 🌧️ 雨滴翻译器启动中...
 ✅ ChatGPT客户端初始化成功
 🚀 服务器启动在 http://localhost:5001
 ```
 
-### 5. 使用网页
+### 5. Using the Web Interface
 
-1. **打开浏览器**，访问：`http://localhost:5001`
+1. **Open your browser** and visit: `http://localhost:5001`
 
-2. **使用方式**：
-   - 在左侧输入框输入最多10个字符
-   - 方式一：输入满10个字符后自动提交转换
-   - 方式二：输入任意字符后按回车键提交
-   - 右侧会显示转换过程和结果
+2. **Usage**:
+   - Enter up to 15 characters in the left input box
+   - Method 1: Auto-submit after entering 15 characters
+   - Method 2: Enter any characters and press Enter to submit
+   - The right side will display the conversion process and results
 
-3. **功能特点**：
-   - 实时字符计数和进度条
-   - 转换过程中显示加载动画
-   - 自动保存最近10次转换记录
-   - 每条记录显示输入内容、转换结果和时间戳
+3. **Features**:
+   - Real-time character count and progress bar
+   - Loading animation during conversion
+   - Auto-save of the last 10 conversion records
+   - Each record shows input content, conversion result, and timestamp
 
-## 故障排除
+## Troubleshooting
 
-### 常见问题
+### Common Issues
 
-1. **服务启动失败**
-   - 检查Python版本是否为3.7+
-   - 确认已安装所有依赖：`pip install -r requirements.txt`
+1. **Service startup failure**
+   - Check if Python version is 3.7+
+   - Confirm all dependencies are installed: `pip install -r requirements.txt`
 
-2. **API调用失败**
-   - 检查`.env`文件中的`OPENAI_API_KEY`是否正确
-   - 确认OpenAI账户有足够的API额度
-   - 检查网络连接是否正常
+2. **API call failure**
+   - Check if `OPENAI_API_KEY` in `.env` file is correct
+   - Confirm OpenAI account has sufficient API quota
+   - Check if network connection is normal
 
-3. **网页无法访问**
-   - 确认服务已成功启动
-   - 检查端口5001是否被占用
-   - 尝试访问：`http://127.0.0.1:5001`
+3. **Web page inaccessible**
+   - Confirm service has started successfully
+   - Check if port 5001 is occupied
+   - Try accessing: `http://127.0.0.1:5001`
 
-### 健康检查
+### Health Check
 
-访问 `http://localhost:5001/api/health` 检查服务状态
+Visit `http://localhost:5001/api/health` to check service status
 
-## 技术架构
+## Technical Architecture
 
-- **前端**：HTML + CSS + JavaScript
-- **后端**：Python Flask
-- **AI服务**：OpenAI ChatGPT API
-- **主要文件**：
-  - `index.html` - 网页界面
-  - `script.js` - 前端交互逻辑
-  - `style.css` - 样式文件
-  - `translate_ChatGPT.py` - 后端服务
-  - `ChatGPT_SDK.py` - ChatGPT API封装
-
-## 启动服务
+- **Frontend**: HTML + CSS + JavaScript
+- **Backend**: Python Flask
+- **AI Service**: OpenAI ChatGPT API
+- **Main Files**:
+  - `index.html` - Web interface
+  - `script.js` - Frontend interaction logic
+  - `style.css` - Style file
+  - `theRainTranslator.py` - Backend service
+  - `ChatGPT_SDK.py` - ChatGPT API wrapper
+  - `get_prompt.py` - Prompt management
+        

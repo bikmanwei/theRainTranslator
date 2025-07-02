@@ -87,3 +87,4 @@ build/               # 构建目录
 # 10. Jupyter Notebook 相关的 (Jupyter Notebook related)
 # -----------------------------------------------------------
 .ipynb_checkpoints/  # Jupyter Notebook 自动保存的检查点文件
+.env
