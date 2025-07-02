@@ -2,7 +2,9 @@
 
 
           
-# Rain Translator
+# The Rain Translator
+by [Bikman Wei](https://bikmanwei.com/)
+
 
 A creative web application that converts user input characters into rain-themed poetry using the ChatGPT API. Transform random character strings into imaginative rain-themed poems.
 
